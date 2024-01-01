@@ -1,0 +1,41 @@
+using System;
+
+namespace or202
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int[] B = new int[5];
+
+            int a = 0, say = 0, toplam = 0;
+
+            foreach (int al in B)
+            {
+                Console.Write(a + ". Elemanı Gir: ");
+
+               
+                B[a] = Int32.Parse(Console.ReadLine()); // Girilen değer dizinin ilgili indeksine atanıyor.
+
+                
+                if (B[a] % 10 == 0)// Eğer girilen sayının son rakamı sıfırsa, sayı adedi artırılıyor ve toplama ekleniyor.
+                {
+                    say++;
+                    toplam += B[a];
+                }
+
+                a++;
+            }
+
+            Console.WriteLine("Son Rakamı Sıfır Olan Sayı Adedi: " + say);
+            Console.WriteLine("Son Rakamı Sıfır Olan Sayıların Toplamı: " + toplam);
+
+            double ortalama = toplam / say ;
+            Console.WriteLine("Son Rakamı Sıfır Olan Sayıların Ortalaması: " + ortalama);
+
+            Console.Write("Devam etmek için bir tuşa basınız. . . ");
+
+            Console.ReadKey(true);
+        }
+    }
+}
