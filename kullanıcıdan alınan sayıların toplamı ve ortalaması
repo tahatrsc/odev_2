@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("kaç adet sayı girmek istiyorsunuz ?");
+            int adet = Convert.ToInt32(Console.ReadLine());
+
+            if (adet == 0) 
+            {
+                Console.WriteLine("geçerli bir sayı giriniz sayı 0 olamaz");
+                return; //girilen sayı 0'a eşitse program sonlanır
+            }
+            int toplam = 0;
+
+            for (int a = 0; a < adet; a++) // a  adetten küçük olduğu sürece a'yı 1 arttır
+            {
+                Console.WriteLine("lütfen sayı giriniz : ");
+                int girilen_sayi = Convert.ToInt32(Console.ReadLine());
+                toplam += girilen_sayi;
+            }
+            double ortalama = toplam / adet;
+
+            Console.WriteLine("girilen sayıların toplamı :" + toplam);
+            Console.WriteLine("girilen sayıların ortalaması : " + ortalama);
+
+            Console.ReadLine();
+        }
+    }
+}
