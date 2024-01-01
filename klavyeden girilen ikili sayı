@@ -1,0 +1,37 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Lütfen ikili sayı girin: "); 
+        string ikiliSayiStr = Console.ReadLine();
+
+        int sayi = Convert.ToInt32(ikiliSayiStr); 
+
+        int ikiliDeger = sayi;
+        int onluDeger = 0;
+        int tabanDeger = 1;
+
+        while (sayi > 0) //sayı sıfırdan büyük olduğu sürece devam eder
+        {
+            int basamakDeger = sayi % 10; 
+
+            if (basamakDeger != 0 && basamakDeger != 1) //sadece 0 ve 1 kabul edilir
+            {
+                Console.WriteLine("Hatalı giriş! Sadece 0 ve 1 içeren bir ikili sayı giriniz.");
+                return;//hata olursa program sonlanır
+            }
+
+            onluDeger = onluDeger + basamakDeger * tabanDeger; 
+            sayi = sayi / 10;
+
+            tabanDeger = tabanDeger * 2; 
+        }
+
+        Console.WriteLine("İkili (Binary) Sayı: " + ikiliDeger);
+        Console.WriteLine("Onlu (Decimal) Sayı: " + onluDeger);
+
+        Console.ReadLine();
+    }
+}
