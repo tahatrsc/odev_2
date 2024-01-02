@@ -1,0 +1,30 @@
+using System;
+
+namespace or218
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string[] il = { "Muş", "Ağrı", "Bolu", "Mersin", "Ankara", "Sivas", "Kayseri" };
+            string[] isim = { "Asuman", "İclal", "Emin", "Bekir", "Ahmet", "Can", "Esma" };
+
+            Random rastgele = new Random();
+
+            for (int a = 0; a < isim.Length; a++)
+            {
+                int sayi;
+                do
+                {
+                    sayi = rastgele.Next(il.Length);
+                } while (il[sayi] == null);
+
+                Console.WriteLine(isim[a] + "\t= " + il[sayi]);
+                il[sayi] = null; // Atanan şehri null yaparak tekrar seçilmesini engeller
+            }
+
+            Console.Write("Press any key to continue . . . ");
+            Console.ReadKey(true);
+        }
+    }
+}
